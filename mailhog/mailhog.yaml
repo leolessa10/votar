@@ -28,8 +28,12 @@ spec:
   selector:
     app: mailhog
   ports:
-    - protocol: TCP
-      port: 80
+    - protocol: SMTP
+      port: 1025
+      targetPort: 1025
+      nodePort: 30125
+    - protocol: HTTP
+      port: 8025
       targetPort: 8025
-      nodePort: 30025
+      nodePort: 30825
 
